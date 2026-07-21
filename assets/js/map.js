@@ -10,9 +10,15 @@ function initAirQualityMap(containerId, activeCityId = "all", onWardSelect = nul
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  // Guard: if Leaflet hasn't loaded from CDN yet, retry up to 20×
+  // Guard: if Leaflet hasn't loaded from CDN yet, dynamically load it & retry
   if (typeof L === 'undefined') {
     container.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94A3B8;font-family:Plus Jakarta Sans,sans-serif;flex-direction:column;gap:10px;"><span style="font-size:28px;">🌍</span><span>Loading GIS Map…</span></div>';
+    if (!document.getElementById('dynamic-leaflet-js')) {
+      const script = document.createElement('script');
+      script.id = 'dynamic-leaflet-js';
+      script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      document.head.appendChild(script);
+    }
     let retries = 0;
     const poll = setInterval(() => {
       retries++;
@@ -20,7 +26,7 @@ function initAirQualityMap(containerId, activeCityId = "all", onWardSelect = nul
         clearInterval(poll);
         container.innerHTML = '';
         initAirQualityMap(containerId, activeCityId, onWardSelect);
-      } else if (retries > 20) {
+      } else if (retries > 25) {
         clearInterval(poll);
         container.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#EF4444;font-family:Plus Jakarta Sans,sans-serif;">Map failed to load. Please check your internet connection.</div>';
       }
