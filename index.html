@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AeroSense 2.0 - AI Urban Air Quality Intelligence Control Center</title>
+  <meta name="description" content="State-of-the-art AI Urban Air Quality Intelligence Platform: GIS heatmaps, 72h seasonal forecast, AI policy simulator, source apportionment & citizen copilot." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet GIS Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Leaflet GIS Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Application Logic Modules (100% Client-Side JavaScript) -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/forecast.js"></script>
+  <script src="assets/js/attribution.js"></script>
+  <script src="assets/js/simulator.js"></script>
+  <script src="assets/js/map.js"></script>
+  <script src="assets/js/enforcement.js"></script>
+  <script src="assets/js/advisory.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

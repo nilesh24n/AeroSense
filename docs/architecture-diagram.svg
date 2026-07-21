@@ -1,0 +1,94 @@
+<svg viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5B7871" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="720" fill="#0D1414" />
+
+  <text x="40" y="45" fill="#E7F0EE" font-size="26" font-weight="bold">AeroSense — System Architecture</text>
+  <text x="40" y="70" fill="#93A8A3" font-size="14">Urban Air Quality Intelligence — ET AI Hackathon 2026</text>
+
+  <!-- Column headers -->
+  <text x="140" y="120" fill="#6EE7CD" font-size="15" font-weight="bold">DATA LAYER</text>
+  <text x="520" y="120" fill="#6EE7CD" font-size="15" font-weight="bold">INTELLIGENCE LAYER</text>
+  <text x="930" y="120" fill="#6EE7CD" font-size="15" font-weight="bold">DELIVERY LAYER</text>
+
+  <!-- Data layer boxes -->
+  <g font-size="13" fill="#E7F0EE">
+    <rect x="40" y="145" width="220" height="55" rx="10" fill="#142020" stroke="#263636" />
+    <text x="55" y="178" >CAAQMS station feed (AQI)</text>
+
+    <rect x="40" y="215" width="220" height="55" rx="10" fill="#142020" stroke="#263636" />
+    <text x="55" y="248">Satellite (Sentinel / MODIS)</text>
+
+    <rect x="40" y="285" width="220" height="55" rx="10" fill="#142020" stroke="#263636" />
+    <text x="55" y="318">Traffic &amp; mobility feeds</text>
+
+    <rect x="40" y="355" width="220" height="55" rx="10" fill="#142020" stroke="#263636" />
+    <text x="55" y="388">Land-use / ward maps</text>
+  </g>
+
+  <!-- Intelligence layer boxes -->
+  <g font-size="13" fill="#E7F0EE">
+    <rect x="420" y="150" width="260" height="80" rx="12" fill="#17332C" stroke="#3ED6B4" stroke-width="1.5" />
+    <text x="435" y="178" font-weight="bold">Hyperlocal Forecasting Agent</text>
+    <text x="435" y="198" fill="#93A8A3">Holt-Winters seasonal model</text>
+    <text x="435" y="215" fill="#93A8A3">24-72h AQI, confidence band</text>
+
+    <rect x="420" y="255" width="260" height="90" rx="12" fill="#17332C" stroke="#3ED6B4" stroke-width="1.5" />
+    <text x="435" y="283" font-weight="bold">Source Attribution Engine</text>
+    <text x="435" y="303" fill="#93A8A3">Rule-based apportionment by</text>
+    <text x="435" y="320" fill="#93A8A3">land-use, time of day, season</text>
+
+    <rect x="420" y="370" width="260" height="80" rx="12" fill="#17332C" stroke="#3ED6B4" stroke-width="1.5" />
+    <text x="435" y="398" font-weight="bold">Enforcement Prioritisation</text>
+    <text x="435" y="418" fill="#93A8A3">Risk = severity x population x</text>
+    <text x="435" y="435" fill="#93A8A3">source controllability</text>
+  </g>
+
+  <!-- Delivery layer boxes -->
+  <g font-size="13" fill="#E7F0EE">
+    <rect x="860" y="150" width="230" height="60" rx="10" fill="#142020" stroke="#263636" />
+    <text x="875" y="185">City ops dashboard</text>
+
+    <rect x="860" y="230" width="230" height="60" rx="10" fill="#142020" stroke="#263636" />
+    <text x="875" y="265">Enforcement action queue</text>
+
+    <rect x="860" y="310" width="230" height="60" rx="10" fill="#142020" stroke="#263636" />
+    <text x="875" y="345">Citizen advisory (multilingual)</text>
+  </g>
+
+  <!-- End users -->
+  <g font-size="13" fill="#93A8A3">
+    <text x="900" y="420">→ City administrators / PCB</text>
+    <text x="900" y="445">→ Citizens</text>
+  </g>
+
+  <!-- Arrows: data -> intelligence -->
+  <path d="M260,172 C340,172 340,190 420,190" stroke="#5B7871" fill="none" marker-end="url(#arrow)" />
+  <path d="M260,242 C360,242 360,300 420,300" stroke="#5B7871" fill="none" marker-end="url(#arrow)" stroke-dasharray="4,4" />
+  <path d="M260,312 C340,312 340,300 420,300" stroke="#5B7871" fill="none" marker-end="url(#arrow)" />
+  <path d="M260,382 C340,382 340,340 420,340" stroke="#5B7871" fill="none" marker-end="url(#arrow)" />
+
+  <!-- Arrows: intelligence internal -->
+  <path d="M550,255 L550,255" stroke="#5B7871" fill="none" />
+  <path d="M550,230 L550,255" stroke="#5B7871" fill="none" marker-end="url(#arrow)" />
+  <path d="M550,345 L550,370" stroke="#5B7871" fill="none" marker-end="url(#arrow)" />
+  <path d="M680,190 C760,190 760,395 680,400" stroke="#5B7871" fill="none" marker-end="url(#arrow)" />
+
+  <!-- Arrows: intelligence -> delivery -->
+  <path d="M680,190 C760,190 780,180 860,180" stroke="#5B7871" fill="none" marker-end="url(#arrow)" />
+  <path d="M680,410 C760,410 780,260 860,260" stroke="#5B7871" fill="none" marker-end="url(#arrow)" />
+  <path d="M680,300 C780,300 780,340 860,340" stroke="#5B7871" fill="none" marker-end="url(#arrow)" />
+  <path d="M680,190 C820,190 820,340 860,340" stroke="#5B7871" fill="none" marker-end="url(#arrow)" stroke-dasharray="4,4" />
+
+  <!-- Legend -->
+  <g font-size="12" fill="#93A8A3">
+    <line x1="40" y1="470" x2="70" y2="470" stroke="#5B7871" stroke-dasharray="4,4" />
+    <text x="80" y="474">planned / future data source (not in current prototype)</text>
+  </g>
+
+  <text x="40" y="670" fill="#93A8A3" font-size="12">Prototype build: static client-side app (index.html + assets/js). Data layer is synthetic-but-realistic for the demo; see README for the production data-swap plan.</text>
+</svg>
