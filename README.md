@@ -1,6 +1,6 @@
 # AeroSense — Urban Air Quality Intelligence
 
-Built for **ET AI Hackathon 2026** (Economic Times Digital) — problem statement: *AI-Powered Urban Air Quality Intelligence for Smart City Intervention*.
+ *AI-Powered Urban Air Quality Intelligence for Smart City Intervention*.
 
 **Live idea in one line:** most Indian cities already have the sensor data (900+ CAAQMS stations under NCAP) — what's missing is the layer that turns a reading into a decision. AeroSense takes ward-level AQI, attributes it to a source, forecasts where it's headed, and tells a specific official what to do about it today, in a language a citizen actually reads in.
 
