@@ -35,7 +35,8 @@ function el(tag, attrs = {}, children = []) {
   Object.entries(attrs).forEach(([k, v]) => {
     if (k === "class") node.className = v;
     else if (k === "html") node.innerHTML = v;
-    else if (k.startsWith("on")) node.addEventListener(k.slice(2), v);
+    else if (k.startsWith("on") && typeof v === "function") node.addEventListener(k.slice(2), v);
+    else if (k.startsWith("on") && typeof v === "string") node.setAttribute(k, v);
     else node.setAttribute(k, v);
   });
   (Array.isArray(children) ? children : [children]).forEach((c) => {
@@ -89,7 +90,10 @@ function navBar(active) {
         src: "assets/logo.png",
         alt: "AeroSense 2.0 Logo",
         class: "brand-logo-img",
-        onerror: "this.style.display='none';this.nextSibling.style.display='flex'",
+        onerror: (e) => {
+          e.target.style.display = "none";
+          if (e.target.nextSibling) e.target.nextSibling.style.display = "flex";
+        },
       }),
       el("div", { class: "brand-logo-fallback", style: "display:none;align-items:center;gap:12px;" }, [
         el("div", { class: "brand-icon-wrapper" }, [
