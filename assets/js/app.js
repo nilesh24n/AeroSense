@@ -712,4 +712,8 @@ function route() {
 }
 
 window.addEventListener("hashchange", route);
-window.addEventListener("DOMContentLoaded", route);
+if (document.readyState === "loading") {
+  window.addEventListener("DOMContentLoaded", route);
+} else {
+  route();
+}
